@@ -6,7 +6,7 @@ import { version } from './package.json';
 
 const watch = Boolean(process.env.ROLLUP_WATCH);
 
-const pluginName = 'ExtensionFGKPrimitives';
+const pluginName = 'ExtensionRiskPrimitives';
 
 const output = watch
   ? `./../../DTCD/server/plugins/DTCD-${pluginName}_${version}/${pluginName}.js`

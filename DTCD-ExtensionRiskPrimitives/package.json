@@ -1,8 +1,8 @@
 {
-  "name": "extension-fgk-primitives",
+  "name": "extension-risk-primitives",
   "version": "0.1.0",
   "description": "",
-  "main": "./src/ExtensionFGKPrimitives.js",
+  "main": "./src/ExtensionRiskPrimitives.js",
   "scripts": {
     "test": "jest",
     "build": "rollup -c",

@@ -1,6 +1,6 @@
-# DTCD-ExtensionFGKPrimitives
+# DTCD-ExtensionRiskPrimitives
 
-Plugin, which includes a set of FGK primitives for [PrimitiveLibraryPanel](https://github.com/ISGNeuroTeam/DTCD-PrimitiveLibraryPanel)
+Plugin, which includes a set of risk primitives for [PrimitiveLibraryPanel](https://github.com/ISGNeuroTeam/DTCD-PrimitiveLibraryPanel)
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ In order to use this plugin you need to download it, build and move build folder
 
 - [node.js](https://nodejs.org/en/) LTS version 14.x.x
 - `make` utility
-- [DTCD](https://github.com/ISGNeuroTeam/DTCD) application
+- [DTCD](https://github.com/ISGNeuroTeam/DTCD) v0.6.0
 
 ### Building
 
@@ -41,7 +41,7 @@ make clear
 Create package, then move archive to _plugins_ folder in DTCD server root folder and unarchive it with the following commands:
 
 ```
-tar -zxf DTCD-ExtensionFGKPrimitives-*.tar.gz
+tar -zxf DTCD-ExtensionRiskPrimitives-*.tar.gz
 ```
 
 ## Built With
@@ -52,7 +52,7 @@ tar -zxf DTCD-ExtensionFGKPrimitives-*.tar.gz
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ISGNeuroTeam/DTCD-ExtensionFGKPrimitives/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ISGNeuroTeam/DTCD-ExtensionRiskPrimitives/tags).
 
 Also you can see the [CHANGELOG](CHANGELOG.md) file.
 

@@ -13,18 +13,18 @@ for (let j = 1; j < 4; j++) {
         return {
           title: 'Target Rich Label',
           name: 'TargetRichLabelNode${j}',
-          groups: ['ФГК'],
+          groups: ['Рисковые примитивы'],
           icon,
         };
       }
-    
+
       constructor(yFiles) {
         const strokeColor = '#5856D6';
         super(yFiles, strokeColor, ${j}, 0);
       }
     }
   `)( RichLabelNode, icons[`icon${j}`])
-  
+
   primitiveClasses.push(primitiveClass)
 }
 
