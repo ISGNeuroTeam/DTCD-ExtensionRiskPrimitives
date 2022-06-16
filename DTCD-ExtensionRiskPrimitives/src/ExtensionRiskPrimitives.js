@@ -1,15 +1,15 @@
 import primitives from './primitives';
 import { ExtensionPlugin } from './../../DTCD-SDK/';
-import { version } from './../package.json';
+import { version } from '../package.json';
 
-export class ExtensionFGKPrimitives extends ExtensionPlugin {
+export class ExtensionRiskPrimitives extends ExtensionPlugin {
   static getRegistrationMeta() {
     return {
       version,
       type: 'extension',
       target: ['PrimitiveLibraryPanel', 'LiveDashPanel'],
-      title: 'Расширение библиотеки примитивов FGK',
-      name: 'ExtensionFGKPrimitives',
+      title: 'Расширение библиотеки примитивов для рисков',
+      name: 'ExtensionRiskPrimitives',
     };
   }
 

@@ -7,8 +7,8 @@ Required section:
 Addition section:
 endef
 
-PROJECT_NAME = DTCD-ExtensionFGKPrimitives
-PLUGIN_NAME = ExtensionFGKPrimitives
+PROJECT_NAME = DTCD-ExtensionRiskPrimitives
+PLUGIN_NAME = ExtensionRiskPrimitives
 
 
 GENERATE_VERSION = $(shell jq .version ./${PROJECT_NAME}/package.json)

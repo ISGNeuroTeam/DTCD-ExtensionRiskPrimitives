@@ -23,18 +23,18 @@ for (let i = 0; i < 4; i++) {
           return {
             title: 'Uncontrolled Rich Label',
             name: 'UncontrolledRichLabelNode${i}${j}',
-            groups: ['ФГК'],
+            groups: ['Рисковые примитивы'],
             icon,
           };
         }
-      
+
         constructor(yFiles) {
           const strokeColor = '#CD5D67';
           super(yFiles, strokeColor, ${i}, ${j});
         }
       }
     `)( RichLabelNode, icons[`icon${i}${j}`])
-    
+
     primitiveClasses.push(primitiveClass)
   }
 }

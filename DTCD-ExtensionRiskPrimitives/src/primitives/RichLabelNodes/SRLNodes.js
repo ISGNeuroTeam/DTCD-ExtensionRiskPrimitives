@@ -20,18 +20,18 @@ for (let i = 1; i < 4; i++) {
           return {
             title: 'Step Rich Label',
             name: 'StepRichLabelNode${i}${j}',
-            groups: ['ФГК'],
+            groups: ['Рисковые примитивы'],
             icon,
           };
         }
-      
+
         constructor(yFiles) {
           const strokeColor = '#32ADE6';
           super(yFiles, strokeColor, ${i}, ${j});
         }
       }
     `)( RichLabelNode, icons[`icon${i}${j}`])
-    
+
     primitiveClasses.push(primitiveClass)
   }
 }
