@@ -42,7 +42,7 @@ export default class CalcNode_2 {
     });
 
     const properties = {
-      type: { expression: `Расчетный`, type: 'expression' },
+      type: { expression: `"Расчетный"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

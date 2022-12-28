@@ -42,8 +42,8 @@ export default class ControlledRiskNode {
     });
 
     const properties = {
-      type: { expression: `Рисковый`, type: 'expression' },
-      by_control: { expression: `Подконтрольный`, type: 'expression' },
+      type: { expression: `"Рисковый"`, type: 'expression' },
+      by_control: { expression: `"Подконтрольный"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

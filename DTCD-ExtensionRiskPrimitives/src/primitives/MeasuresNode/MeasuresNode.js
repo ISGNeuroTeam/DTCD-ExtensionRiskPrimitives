@@ -42,7 +42,7 @@ export default class MeasuresNode {
     });
 
     const properties = {
-      type: { expression: `Мероприятия`, type: 'expression' },
+      type: { expression: `"Мероприятия"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

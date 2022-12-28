@@ -42,7 +42,7 @@ export default class AlertNode {
     });
 
     const properties = {
-      type: { expression: `Оповещение`, type: 'expression' },
+      type: { expression: `"Оповещение"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       alert_subject: { expression: ``, type: 'expression' },
       alert_text: { expression: ``, type: 'expression' },
