@@ -52,7 +52,7 @@ export default class RiskFactorNode {
     const initPorts = [
       {
         primitiveName: `inPort1`,
-        type: 'OUT',
+        type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
           status: { expression: ``, type: 'expression' },

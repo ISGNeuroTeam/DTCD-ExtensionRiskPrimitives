@@ -51,7 +51,7 @@ export default class CalcNode_2 {
     const initPorts = [
       {
         primitiveName: `inPort1`,
-        type: 'OUT',
+        type: 'IN',
         portPosition: { x: 0.2, y: 1 },
         properties: {
           status: { expression: ``, type: 'expression' },
@@ -59,7 +59,7 @@ export default class CalcNode_2 {
       },
       {
         primitiveName: `inPort2`,
-        type: 'OUT',
+        type: 'IN',
         portPosition: { x: 0.8, y: 1 },
         properties: {
           status: { expression: ``, type: 'expression' },
