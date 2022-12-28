@@ -1,11 +1,11 @@
 import icon from './icon.svg';
 
-export default class ExportNode {
+export default class PeriodSetupNode {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Экспорт данных',
-      name: 'ExportNode',
+      title: 'Настройка временного интервала',
+      name: 'PeriodSetup',
       groups: ['Рисковые примитивы 2'],
     };
   }
@@ -30,7 +30,7 @@ export default class ExportNode {
     instance.layout = new Rect(0, 0, 294, 148);
     instance.style = new ShapeNodeStyle({
       shape: 'round-rectangle',
-      stroke: '4px #77dd77',
+      stroke: '4px #FDBCB4',
       fill: '#fff',
     });
 
@@ -41,7 +41,16 @@ export default class ExportNode {
       insets: [20, 20],
     });
 
-    instance.tag = { customLabelStyle, properties: {}, initPorts: [] };
+    const properties = {
+      type: { expression: `Настройка периода`, type: 'expression' },
+      name: { expression: `Настройка периода`, type: 'expression' },
+      start: { expression: `"01.2023"`, type: 'expression' },
+      finish: { expression: `"01.2024"`, type: 'expression' },
+    };
+
+    const initPorts = [];
+
+    instance.tag = { customLabelStyle, properties, initPorts };
 
     this.instance = instance;
     return instance;

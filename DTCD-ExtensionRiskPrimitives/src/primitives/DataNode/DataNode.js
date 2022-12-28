@@ -1,11 +1,11 @@
 import icon from './icon.svg';
 
-export default class ExportNode {
+export default class DataNode {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Экспорт данных',
-      name: 'ExportNode',
+      title: 'Примитив с данными',
+      name: 'Data',
       groups: ['Рисковые примитивы 2'],
     };
   }
@@ -30,7 +30,7 @@ export default class ExportNode {
     instance.layout = new Rect(0, 0, 294, 148);
     instance.style = new ShapeNodeStyle({
       shape: 'round-rectangle',
-      stroke: '4px #77dd77',
+      stroke: '4px #00C7BE',
       fill: '#fff',
     });
 
@@ -41,7 +41,25 @@ export default class ExportNode {
       insets: [20, 20],
     });
 
-    instance.tag = { customLabelStyle, properties: {}, initPorts: [] };
+    const properties = {
+      type: { expression: `Данные`, type: 'expression' },
+      name: { expression: ``, type: 'expression' },
+      description: { expression: ``, type: 'expression' },
+      value: { expression: ``, type: 'expression' },
+    };
+
+    const initPorts = [
+      {
+        primitiveName: `outPort1`,
+        type: 'OUT',
+        portPosition: { x: 0.5, y: 0 },
+        properties: {
+          status: { expression: `value`, type: 'expression' },
+        },
+      }
+    ];
+
+    instance.tag = { customLabelStyle, properties, initPorts };
 
     this.instance = instance;
     return instance;
