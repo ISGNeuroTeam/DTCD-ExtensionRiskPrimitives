@@ -42,8 +42,8 @@ export default class PeriodSetupNode {
     });
 
     const properties = {
-      type: { expression: `Настройка периода`, type: 'expression' },
-      name: { expression: `Настройка периода`, type: 'expression' },
+      type: { expression: `"Настройка периода"`, type: 'expression' },
+      name: { expression: `"Настройка периода"`, type: 'expression' },
       start: { expression: `"01.2023"`, type: 'expression' },
       finish: { expression: `"01.2024"`, type: 'expression' },
     };

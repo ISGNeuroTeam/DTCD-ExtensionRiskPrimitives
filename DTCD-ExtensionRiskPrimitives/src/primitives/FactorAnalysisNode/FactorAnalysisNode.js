@@ -42,7 +42,7 @@ export default class FactorAnalysisNode {
     });
 
     const properties = {
-      type: { expression: `Факторный анализ`, type: 'expression' },
+      type: { expression: `"Факторный анализ"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

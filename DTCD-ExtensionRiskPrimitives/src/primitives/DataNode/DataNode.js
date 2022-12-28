@@ -42,7 +42,7 @@ export default class DataNode {
     });
 
     const properties = {
-      type: { expression: `Данные`, type: 'expression' },
+      type: { expression: `"Данные"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

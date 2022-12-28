@@ -42,7 +42,7 @@ export default class RiskFactorNode {
     });
 
     const properties = {
-      type: { expression: `Риск-фактор`, type: 'expression' },
+      type: { expression: `"Риск-фактор"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       value: { expression: ``, type: 'expression' },

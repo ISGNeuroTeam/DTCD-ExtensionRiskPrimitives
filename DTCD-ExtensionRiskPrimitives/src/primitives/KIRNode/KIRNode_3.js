@@ -42,7 +42,7 @@ export default class KIRNode_3 {
     });
 
     const properties = {
-      type: { expression: `КИР`, type: 'expression' },
+      type: { expression: `"КИР"`, type: 'expression' },
       name: { expression: ``, type: 'expression' },
       description: { expression: ``, type: 'expression' },
       budget_value: { expression: ``, type: 'expression' },

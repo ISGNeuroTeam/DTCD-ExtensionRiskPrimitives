@@ -42,7 +42,7 @@ export default class GoalNode {
     });
 
     const properties = {
-      type: { expression: `Цель`, type: 'expression' },
+      type: { expression: `"Цель"`, type: 'expression' },
       name: {
         expression: ``,
         type: 'expression',
@@ -54,7 +54,8 @@ export default class GoalNode {
             "Грузооборот",
             "Доходность на общий парк руб./ваг./сут.",
             "EBITDA",
-            "Чистый долг/EBITDA","ROIC",
+            "Чистый долг/EBITDA",
+            "ROIC",
             "Проект «Скоростные перевозки контейнеров»",
             "Проект «Контрейлерные перевозки»",
             "Проект «Стратегия цифровой трансформации»",
