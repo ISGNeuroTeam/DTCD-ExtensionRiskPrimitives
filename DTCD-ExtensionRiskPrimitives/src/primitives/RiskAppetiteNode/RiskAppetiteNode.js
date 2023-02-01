@@ -152,8 +152,8 @@ export default class RiskAppetiteNode {
           ]
         }
       },
-      description: { expression: `Рисковый`, type: 'expression' },
-      risk_appetite_value: { expression: `Рисковый`, type: 'expression' },
+      description: { expression: ``, type: 'expression' },
+      risk_appetite_value: { expression: ``, type: 'expression' },
     };
 
     const initPorts = [
