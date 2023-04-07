@@ -1,6 +1,7 @@
 import icon from './icon.svg';
+import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
 
-export default class ExportNode {
+export default class ExportNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
     return {
       icon,
@@ -11,12 +12,12 @@ export default class ExportNode {
   }
 
   constructor(yFiles) {
+    super(yFiles)
     this.yfiles = yFiles.default;
   }
 
   create() {
     const {
-      SimpleNode,
       ShapeNodeStyle,
       Rect,
       Font,
@@ -25,10 +26,9 @@ export default class ExportNode {
       TextWrapping,
     } = this.yfiles;
 
-    const instance = new SimpleNode();
 
-    instance.layout = new Rect(0, 0, 294, 148);
-    instance.style = new ShapeNodeStyle({
+    this.instance.layout = new Rect(0, 0, 294, 148);
+    this.instance.style = new ShapeNodeStyle({
       shape: 'round-rectangle',
       stroke: '4px #77dd77',
       fill: '#fff',
@@ -41,9 +41,8 @@ export default class ExportNode {
       insets: [20, 20],
     });
 
-    instance.tag = { customLabelStyle, properties: {}, initPorts: [] };
+    this.instance.tag = {...this.instance.tag, customLabelStyle, properties: {}, initPorts: [] };
 
-    this.instance = instance;
-    return instance;
+    return this.instance;
   }
 }
