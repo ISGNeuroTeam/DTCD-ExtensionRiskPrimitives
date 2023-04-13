@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - default label for nodes
 - AbstractNode class
 - NodeWithDefaultLabel class
+- field 'title' with tooltip text in RiskNode primitive properties
 
 ## [0.2.0]
 
