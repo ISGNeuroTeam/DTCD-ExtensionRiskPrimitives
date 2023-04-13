@@ -14,6 +14,8 @@ export default class ExportNode extends NodeWithDefaultLabel {
   constructor(yFiles) {
     super(yFiles)
     this.yfiles = yFiles.default;
+    this.instance.tag.defaultLabel = ``
+    this.instance.tag.defaulInitialtLabel = ``
   }
 
   create() {
