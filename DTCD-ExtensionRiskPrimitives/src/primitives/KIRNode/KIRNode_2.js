@@ -1,10 +1,11 @@
 import icon from './icon_2.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class KIRNode_2 {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'КИР',
+      title: 'Ключевой индикатор риска',
       name: 'KIR2',
       groups: ['Рисковые примитивы 2'],
     };
@@ -42,16 +43,16 @@ export default class KIRNode_2 {
     });
 
     const properties = {
-      type: { expression: `"КИР"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      budget_value: { expression: ``, type: 'expression' },
-      fact_value: { expression: ``, type: 'expression' },
-      critical_coef: { expression: ``, type: 'expression' },
-      boundary_coef: { expression: ``, type: 'expression' },
-      critical_value: { expression: ``, type: 'expression' },
-      boundary_value: { expression: ``, type: 'expression' },
-      plan_value: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"КИР"`, title: 'Тип примитива' }),
+      name: createNodeProperty({ title: 'Наименование КИР' }),
+      description: createNodeProperty({ title: 'Описание' }),
+      budget_value: createNodeProperty({ title: 'Бюджетное значение' }),
+      fact_value: createNodeProperty({ title: 'Фактическое значение' }),
+      critical_coef: createNodeProperty({ title: 'Коэффициент для критического значения' }),
+      boundary_coef: createNodeProperty({ title: 'ККоэффициент для пограничного значения' }),
+      critical_value: createNodeProperty({ title: 'Критическое значение' }),
+      boundary_value: createNodeProperty({ title: 'Пограничное значение' }),
+      plan_value: createNodeProperty({ title: 'Плановое значение' }),
     };
 
     const initPorts = [
@@ -60,7 +61,7 @@ export default class KIRNode_2 {
         type: 'IN',
         portPosition: { x: 0.2, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       },
       {
@@ -68,7 +69,7 @@ export default class KIRNode_2 {
         type: 'IN',
         portPosition: { x: 0.8, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       },
       {
@@ -76,7 +77,7 @@ export default class KIRNode_2 {
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status: createNodeProperty({ expression: `value` }),
         },
       }
     ];

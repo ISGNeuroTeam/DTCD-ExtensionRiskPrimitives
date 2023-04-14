@@ -1,10 +1,11 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class UncontrolledRiskNode {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Неподконтрольный риск (главное дерево)',
+      title: 'Неподконтрольный риск-фактор (главное дерево)',
       name: 'UncontrolledRisk',
       groups: ['Рисковые примитивы 2'],
     };
@@ -42,11 +43,11 @@ export default class UncontrolledRiskNode {
     });
 
     const properties = {
-      type: { expression: `"Рисковый"`, type: 'expression' },
-      by_control: { expression: `"Неподконтрольный"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Рисковый"`, title: 'Тип примитива' }),
+      name: createNodeProperty({title: 'Наименование риск-фактора' }),
+      description: createNodeProperty({ title: 'Описание' }),
+      value: createNodeProperty({ title: 'Значение' }),
+      risk_clc: createNodeProperty({ title: 'Величина влияния риска' }),
     };
 
     const initPorts = [
@@ -55,7 +56,7 @@ export default class UncontrolledRiskNode {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       },
       {
@@ -63,7 +64,7 @@ export default class UncontrolledRiskNode {
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status: createNodeProperty({ expression: `value`}),
         },
       }
     ];

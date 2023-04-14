@@ -1,10 +1,11 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class FactorAnalysisNode {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Верхний блок факторный анализ',
+      title: 'Факторный анализ эффективности управления риском',
       name: 'FactorAnalysis',
       groups: ['Рисковые примитивы 2'],
     };
@@ -42,12 +43,12 @@ export default class FactorAnalysisNode {
     });
 
     const properties = {
-      type: { expression: `"Факторный анализ"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
-      management_action: { expression: ``, type: 'expression' },
-      external_influence: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Факторный анализ"`, title: 'Тип примитива' }),
+      name: createNodeProperty({title:'Наименование'}),
+      description: createNodeProperty({title:'Описание'}),
+      value: createNodeProperty({title:'Значение'}),
+      management_action: createNodeProperty({title:'Действия менеджмента'}),
+      external_influence: createNodeProperty({title:'Внешнее воздействие'}),
     };
 
     const initPorts = [
@@ -56,7 +57,7 @@ export default class FactorAnalysisNode {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       }
     ];

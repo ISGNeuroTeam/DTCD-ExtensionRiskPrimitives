@@ -1,10 +1,11 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class AlertNode {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Блок оповещения',
+      title: 'Оповещение',
       name: 'Alert',
       groups: ['Рисковые примитивы 2'],
     };
@@ -42,20 +43,20 @@ export default class AlertNode {
     });
 
     const properties = {
-      type: { expression: `"Оповещение"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      alert_subject: { expression: ``, type: 'expression' },
-      alert_text: { expression: ``, type: 'expression' },
-      email_address: { expression: ``, type: 'expression' },
-      condition: { expression: ``, type: 'expression' },
-      value_1: { expression: ``, type: 'expression' },
-      value_2: { expression: ``, type: 'expression' },
-      value_3: { expression: ``, type: 'expression' },
-      value_4: { expression: ``, type: 'expression' },
-      notification_1: { expression: ``, type: 'expression' },
-      notification_2: { expression: ``, type: 'expression' },
-      notification_3: { expression: ``, type: 'expression' },
-      notification_4: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Оповещение"`, title:'Тип примитива' }),
+      name: createNodeProperty({ title:'Наименование' }),
+      alert_subject: createNodeProperty({ title:'Тема уведомления' }),
+      alert_text: createNodeProperty({ title:'Текст уведомления' }),
+      email_address: createNodeProperty({ title:'Адрес эл.почты' }),
+      condition: createNodeProperty({ title:'Условие' }),
+      value_1: createNodeProperty({ title:'Значение 1' }),
+      value_2: createNodeProperty({ title:'Значение 2' }),
+      value_3: createNodeProperty({ title:'Значение 3' }),
+      value_4: createNodeProperty({ title:'Значение 4' }),
+      notification_1: createNodeProperty({ title:'Уведомление 1' }),
+      notification_2: createNodeProperty({ title:'Уведомление 2' }),
+      notification_3: createNodeProperty({ title:'Уведомление 3' }),
+      notification_4: createNodeProperty({ title:'Уведомление 4' }),
     };
 
     const initPorts = [
@@ -64,7 +65,7 @@ export default class AlertNode {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       }
     ];
