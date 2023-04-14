@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class GoalNode {
   static getPrimitiveInfo() {
@@ -42,10 +43,8 @@ export default class GoalNode {
     });
 
     const properties = {
-      type: { expression: `"Цель"`, type: 'expression' },
-      name: {
-        expression: ``,
-        type: 'expression',
+      type: createNodeProperty({ expression: `"Цель"`, title: 'Тип примитива' }),
+      name: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -60,10 +59,11 @@ export default class GoalNode {
             `"Проект «Контрейлерные перевозки»"`,
             `"Проект «Стратегия цифровой трансформации»"`,
           ]
-        }
-      },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
+        },
+        title: 'Наименование'
+      }),
+      description: createNodeProperty({title:'Описание'}),
+      value: createNodeProperty({title:'Значение'}),
     };
 
     const initPorts = [
@@ -72,7 +72,7 @@ export default class GoalNode {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       }
     ];

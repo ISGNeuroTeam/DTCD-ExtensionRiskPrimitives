@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class PeriodSetupNode {
   static getPrimitiveInfo() {
@@ -42,10 +43,10 @@ export default class PeriodSetupNode {
     });
 
     const properties = {
-      type: { expression: `"Настройка периода"`, type: 'expression' },
-      name: { expression: `"Настройка периода"`, type: 'expression' },
-      start: { expression: `"01.2023"`, type: 'expression' },
-      finish: { expression: `"01.2024"`, type: 'expression' },
+      type: createNodeProperty({ expression: `"Настройка периода"`, title: 'Тип примитива' }),
+      name: createNodeProperty({ expression: `"Настройка периода"`, title: 'Наименование' }),
+      start: createNodeProperty({ expression: `"01.2023"`, title: 'Начало периода' }),
+      finish: createNodeProperty({ expression: `"01.2024"`, title: 'Конец периода' }),
     };
 
     const initPorts = [];

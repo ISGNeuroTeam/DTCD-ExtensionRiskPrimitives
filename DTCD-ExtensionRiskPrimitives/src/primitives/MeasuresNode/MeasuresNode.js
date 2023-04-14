@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class MeasuresNode {
   static getPrimitiveInfo() {
@@ -42,13 +43,11 @@ export default class MeasuresNode {
     });
 
     const properties = {
-      type: { expression: `"Мероприятия"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
-      risk_owner: {
-        expression: ``,
-        type: 'expression',
+      type: createNodeProperty({ expression: `"Мероприятия"`, title: 'Тип примитива' }),
+      name: createNodeProperty({ title: 'Наименование мероприятия' }),
+      description: createNodeProperty({ title: 'Описание' }),
+      value: createNodeProperty({ title: 'Значение' }),
+      risk_owner: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -71,13 +70,14 @@ export default class MeasuresNode {
             `"ДСКУ: Р.Г. Абдуллаева"`,
             `"ДПИ: С.А. Калашников"`,
           ],
-        }
-      },
-      cost: { expression: ``, type: 'expression' },
-      planned_at: { expression: ``, type: 'expression' },
-      status: { expression: ``, type: 'expression' },
-      efficiency: { expression: ``, type: 'expression' },
-      comment: { expression: ``, type: 'expression' },
+        },
+        title:'Владелец риска'
+      }),
+      cost: createNodeProperty({ title: 'Затраты на реализацию' }),
+      planned_at: createNodeProperty({ title: 'Плановая дата мероприятия' }),
+      status: createNodeProperty({ title: 'Текущий статус' }),
+      efficiency: createNodeProperty({ title: 'Итоговая эффективность мероприятия' }),
+      comment: createNodeProperty({ title: 'Комментарии' }),
     };
 
     const initPorts = [
@@ -86,7 +86,7 @@ export default class MeasuresNode {
         type: 'OUT',
         portPosition: { x: 1, y: 0.5 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status: createNodeProperty({ expression: `value`}),
         },
       }
     ];

@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class RiskFactorNode {
   static getPrimitiveInfo() {
@@ -42,11 +43,11 @@ export default class RiskFactorNode {
     });
 
     const properties = {
-      type: { expression: `"Риск-фактор"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
-      expected_effect: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Риск-фактор"`, title: 'Тип примитива' }),
+      name: createNodeProperty({ title: `Наименование риск-фактора`}),
+      description: createNodeProperty({ title: `Описание`}),
+      value: createNodeProperty({ title: `Значение`}),
+      expected_effect: createNodeProperty({ title: `Ожидаемый эффект`}),
     };
 
     const initPorts = [
@@ -55,7 +56,7 @@ export default class RiskFactorNode {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       },
       {
@@ -63,7 +64,7 @@ export default class RiskFactorNode {
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status:  createNodeProperty({ expression: `value` }),
         },
       }
     ];

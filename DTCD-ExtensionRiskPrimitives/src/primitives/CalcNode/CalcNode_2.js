@@ -1,10 +1,11 @@
 import icon from './icon_2.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class CalcNode_2 {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Расчетный',
+      title: 'Расчетный2',
       name: 'Calc2',
       groups: ['Рисковые примитивы 2'],
     };
@@ -42,10 +43,10 @@ export default class CalcNode_2 {
     });
 
     const properties = {
-      type: { expression: `"Расчетный"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Расчетный"`, title:'Тип примитива' }),
+      name: createNodeProperty({ title:'Наименование' }),
+      description: createNodeProperty({ title:'Описание' }),
+      value: createNodeProperty({ title:'Значение' }),
     };
 
     const initPorts = [
@@ -54,7 +55,7 @@ export default class CalcNode_2 {
         type: 'IN',
         portPosition: { x: 0.2, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       },
       {
@@ -62,7 +63,7 @@ export default class CalcNode_2 {
         type: 'IN',
         portPosition: { x: 0.8, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status:  createNodeProperty({}),
         },
       },
       {
@@ -70,7 +71,7 @@ export default class CalcNode_2 {
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status: createNodeProperty({expression: `value`}),
         },
       }
     ];

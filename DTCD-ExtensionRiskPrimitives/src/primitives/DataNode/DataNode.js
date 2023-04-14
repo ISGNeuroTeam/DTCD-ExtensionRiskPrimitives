@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class DataNode {
   static getPrimitiveInfo() {
@@ -42,10 +43,10 @@ export default class DataNode {
     });
 
     const properties = {
-      type: { expression: `"Данные"`, type: 'expression' },
-      name: { expression: ``, type: 'expression' },
-      description: { expression: ``, type: 'expression' },
-      value: { expression: ``, type: 'expression' },
+      type: createNodeProperty({ expression: `"Данные"`, title:'Тип примитива' }),
+      name:  createNodeProperty({title:'Наименование'}),
+      description: createNodeProperty({title:'Описание'}),
+      value: createNodeProperty({title:'Значение'}),
     };
 
     const initPorts = [
@@ -54,7 +55,7 @@ export default class DataNode {
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: { expression: `value`, type: 'expression' },
+          status: createNodeProperty({ expression:'value' }),
         },
       }
     ];
