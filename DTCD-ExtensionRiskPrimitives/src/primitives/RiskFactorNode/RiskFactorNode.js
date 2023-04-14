@@ -1,7 +1,8 @@
 import icon from './icon.svg';
 import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
+import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
 
-export default class RiskFactorNode {
+export default class RiskFactorNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
     return {
       icon,
@@ -12,12 +13,12 @@ export default class RiskFactorNode {
   }
 
   constructor(yFiles) {
+    super(yFiles)
     this.yfiles = yFiles.default;
   }
 
   create() {
     const {
-      SimpleNode,
       ShapeNodeStyle,
       Rect,
       Font,
@@ -26,10 +27,9 @@ export default class RiskFactorNode {
       TextWrapping,
     } = this.yfiles;
 
-    const instance = new SimpleNode();
 
-    instance.layout = new Rect(0, 0, 294, 148);
-    instance.style = new ShapeNodeStyle({
+    this.instance.layout = new Rect(0, 0, 294, 148);
+    this.instance.style = new ShapeNodeStyle({
       shape: 'round-rectangle',
       stroke: '4px #5856D6',
       fill: '#fff',
@@ -69,9 +69,8 @@ export default class RiskFactorNode {
       }
     ];
 
-    instance.tag = { customLabelStyle, properties, initPorts };
+    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
 
-    this.instance = instance;
-    return instance;
+    return this.instance;
   }
 }
