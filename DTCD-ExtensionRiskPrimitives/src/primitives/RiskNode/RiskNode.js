@@ -45,7 +45,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: { expression: `"Риск"`, type: 'expression' },
+      type: { 
+        expression: `"Риск"`,
+        type: 'expression',
+      },
       name: {
         expression: ``,
         type: 'expression',
@@ -155,7 +158,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
           ]
         }
       },
-      description: { expression: ``, type: 'expression' },
+      description: {
+        expression: ``,
+        type: 'expression',
+      },
       goal: {
         expression: ``,
         type: 'expression',
@@ -257,6 +263,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       is_typical: {
         expression: ``,
         type: 'expression',
+        title: 'Типовой риск',
         input: {
           component: 'switch',
         },
@@ -264,6 +271,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       is_sanc_sens: {
         expression: ``,
         type: 'expression',
+        title: 'Санкционное воздействие',
         input: {
           component: 'switch',
         },
@@ -271,15 +279,25 @@ export default class RiskNode extends NodeWithDefaultLabel {
       is_compliance: {
         expression: ``,
         type: 'expression',
+        title: 'Комплаенс-последствия',
         input: {
           component: 'switch',
         },
       },
-      risk_factor: { expression: ``, type: 'expression' },
-      consequences: { expression: ``, type: 'expression' },
+      risk_factor: {
+        expression: ``,
+        type: 'expression',
+        title: 'Риск-фактор',
+      },
+      consequences: {
+        expression: ``,
+        type: 'expression',
+        title: 'Последствия реализации риска',
+      },
       related_risk: {
         expression: ``,
         type: 'expression',
+        title: 'Связанные риски',
         input: {
           component: 'select',
           type: 'const',
@@ -289,6 +307,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       risk_owner: {
         expression: ``,
         type: 'expression',
+        title: 'Владелец риска',
         input: {
           component: 'select',
           type: 'const',
@@ -316,6 +335,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       is_quantified: {
         expression: ``,
         type: 'expression',
+        title: 'Возможность количественной оценки',
         input: {
           component: 'select',
           type: 'const',
@@ -328,6 +348,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       current_risk_probability: {
         expression: ``,
         type: 'expression',
+        title: 'Текущий риск — Вероятность',
         input: {
           component: 'select',
           type: 'const',
@@ -340,12 +361,25 @@ export default class RiskNode extends NodeWithDefaultLabel {
           ],
         }
       },
-      current_risk_impact: { expression: ``, type: 'expression' },
-      current_risk_value: { expression: ``, type: 'expression' },
-      approach: { expression: ``, type: 'expression' },
+      current_risk_impact: {
+        expression: ``,
+        type: 'expression',
+        title: 'Текущий риск — Влияние',
+      },
+      current_risk_value: {
+        expression: ``,
+        type: 'expression',
+        title: 'Текущий риск — Итоговая оценка',
+      },
+      approach: {
+        expression: ``,
+        type: 'expression',
+        title: 'Подход к оценке',
+      },
       coordinator: {
         expression: ``,
         type: 'expression',
+        title: 'Риск-координатор',
         input: {
           component: 'select',
           type: 'const',
@@ -388,6 +422,33 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"М.В.Бубнов А.В. Банников"`,
           ],
         }
+      },
+      director: {
+        expression: ``,
+        type: 'expression',
+        title: 'Курирующий ЗГД',
+        input: {
+          component: 'select',
+          type: 'const',
+          values: [
+            `"Генеральный директор — Воронович Виктор Казимирович"`,
+            `"Первый заместитель генерального директора — Воронин Леонид Анатольевич"`,
+            `"Заместитель генерального директора по корпоративному управлению — Арабова Наталья Владимировна"`,
+            `"Заместитель генерального директора по корпоративной безопасности и правовым вопросам — Жаббаров Ильдар Равильевич"`,
+            `"Главный бухгалтер — Евдокимова Татьяна Анатольевна"`,
+            `"Заместитель генерального директора по техническому развитию - главный инженер — Шевцов Андрей Мухамедович"`,
+            `"Заместитель генерального директора по экономике и финансам — Калмыков Константин Сергеевич"`,
+          ]
+        }
+      },
+      is_key_risk: {
+        expression: ``,
+        type: 'expression',
+        title: 'Ключевой / не ключевой',
+        input: {
+          component: 'switch',
+          label: 'Нет / Да',
+        },
       },
     };
 
