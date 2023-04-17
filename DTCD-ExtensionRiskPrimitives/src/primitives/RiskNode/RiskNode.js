@@ -1,4 +1,5 @@
 import icon from './icon.svg';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
 
 export default class RiskNode extends NodeWithDefaultLabel {
@@ -45,13 +46,11 @@ export default class RiskNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: { 
+      type: createNodeProperty({ 
         expression: `"Риск"`,
-        type: 'expression',
-      },
-      name: {
-        expression: ``,
-        type: 'expression',
+        title:"Тип примитива"
+      }),
+      name: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -100,11 +99,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Риск снижения индекса исполнительской дисциплины"`,
             `"Риск несоотвествия рабочего парка потребному в связи с отсутствием деталей для ремонта ПС"`,
           ]
-        }
-      },
-      identifier: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Наименование риска'
+      }),
+      identifier: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -156,15 +154,13 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Р.045"`,
             `"Р.046"`,
           ]
-        }
-      },
-      description: {
-        expression: ``,
-        type: 'expression',
-      },
-      goal: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Идентификатор риска'
+      }),
+      description: createNodeProperty({
+        title:'Описание'
+      }),
+      goal: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -179,11 +175,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Проект «Контрейлерные перевозки»"`,
             `"Проект «Стратегия цифровой трансформации»"`,
           ]
-        }
-      },
-      business_process: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Цель'
+      }),
+      business_process: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -210,11 +205,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"обеспечение охраны труда, промышленной, пожарной и экологической безопасности"`,
             `"обеспечение безопасности движения"`,
           ]
-        }
-      },
-      risk_type: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Бизнес-процесс'
+      }),
+      risk_type: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -224,11 +218,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"комплаенс-риски (соблюдение нормативно-правовых актов внутренних нормативных документов Общества)"`,
             `"риски достоверности отчетности"`,
           ]
-        }
-      },
-      business_direction: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Тип риска'
+      }),
+      business_direction: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -258,55 +251,49 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Делопроизводство и ведение архива"`,
             `"Корпоративное управление"`,
           ]
-        }
-      },
-      is_typical: {
-        expression: ``,
-        type: 'expression',
+        },
+        title:'Направление деятельности'
+      }),
+      is_key_risk: createNodeProperty({
+        title: 'Ключевой / не ключевой',
+        input: {
+          component: 'switch',
+          label: 'Нет / Да',
+        },
+      }),
+      is_typical: createNodeProperty({
         title: 'Типовой риск',
         input: {
           component: 'switch',
         },
-      },
-      is_sanc_sens: {
-        expression: ``,
-        type: 'expression',
+      }),
+      is_sanc_sens: createNodeProperty({
         title: 'Санкционное воздействие',
         input: {
           component: 'switch',
         },
-      },
-      is_compliance: {
-        expression: ``,
-        type: 'expression',
+      }),
+      is_compliance: createNodeProperty({
         title: 'Комплаенс-последствия',
         input: {
           component: 'switch',
         },
-      },
-      risk_factor: {
-        expression: ``,
-        type: 'expression',
-        title: 'Риск-фактор',
-      },
-      consequences: {
-        expression: ``,
-        type: 'expression',
+      }),
+      risk_factor: createNodeProperty({
+        title: 'Риск-факторы',
+      }),
+      consequences: createNodeProperty({
         title: 'Последствия реализации риска',
-      },
-      related_risk: {
-        expression: ``,
-        type: 'expression',
+      }),
+      related_risk: createNodeProperty({
         title: 'Связанные риски',
         input: {
           component: 'select',
           type: 'const',
           values: []
         }
-      },
-      risk_owner: {
-        expression: ``,
-        type: 'expression',
+      }),
+      risk_owner: createNodeProperty({
         title: 'Владелец риска',
         input: {
           component: 'select',
@@ -331,10 +318,8 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"ДПИ: С.А. Калашников"`,
           ],
         }
-      },
-      is_quantified: {
-        expression: ``,
-        type: 'expression',
+      }),
+      is_quantified: createNodeProperty({
         title: 'Возможность количественной оценки',
         input: {
           component: 'select',
@@ -344,10 +329,8 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Качественный"`,
           ],
         }
-      },
-      current_risk_probability: {
-        expression: ``,
-        type: 'expression',
+      }),
+      current_risk_probability: createNodeProperty({
         title: 'Текущий риск — Вероятность',
         input: {
           component: 'select',
@@ -360,25 +343,17 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `">75%"`,
           ],
         }
-      },
-      current_risk_impact: {
-        expression: ``,
-        type: 'expression',
+      }),
+      current_risk_impact: createNodeProperty({
         title: 'Текущий риск — Влияние',
-      },
-      current_risk_value: {
-        expression: ``,
-        type: 'expression',
+      }),
+      current_risk_value: createNodeProperty({
         title: 'Текущий риск — Итоговая оценка',
-      },
-      approach: {
-        expression: ``,
-        type: 'expression',
+      }),
+      approach: createNodeProperty({
         title: 'Подход к оценке',
-      },
-      coordinator: {
-        expression: ``,
-        type: 'expression',
+      }),
+      coordinator: createNodeProperty({
         title: 'Риск-координатор',
         input: {
           component: 'select',
@@ -422,10 +397,8 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"М.В.Бубнов А.В. Банников"`,
           ],
         }
-      },
-      director: {
-        expression: ``,
-        type: 'expression',
+      }),
+      director: createNodeProperty({
         title: 'Курирующий ЗГД',
         input: {
           component: 'select',
@@ -440,16 +413,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Заместитель генерального директора по экономике и финансам — Калмыков Константин Сергеевич"`,
           ]
         }
-      },
-      is_key_risk: {
-        expression: ``,
-        type: 'expression',
-        title: 'Ключевой / не ключевой',
-        input: {
-          component: 'switch',
-          label: 'Нет / Да',
-        },
-      },
+      })
     };
 
     const initPorts = [
@@ -458,7 +422,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       }
     ];

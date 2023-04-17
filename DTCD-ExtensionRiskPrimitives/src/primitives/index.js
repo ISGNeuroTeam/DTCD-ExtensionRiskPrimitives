@@ -17,8 +17,9 @@ import KIRNode_2 from './KIRNode/KIRNode_2';
 import KIRNode_3 from './KIRNode/KIRNode_3';
 import PeriodSetupNode from './PeriodSetupNode/PeriodSetupNode';
 import AlertNode from './AlertNode/AlertNode';
-import RiskRAppetiteNode from './RiskAppetiteNode/RiskAppetiteNode';
+import RiskAppetiteGoalNode from './RiskAppetiteGoalNode/RiskAppetiteGoalNode';
 import FactorAnalysisNode from './FactorAnalysisNode/FactorAnalysisNode';
+import RiskApptiteRiskNode from './RiskAppetiteRiskNode/RiskAppetiteRiskNode';
 
 export default [
   ...CRLNodes,
@@ -40,6 +41,7 @@ export default [
   ExportNode,
   PeriodSetupNode,
   AlertNode,
-  RiskRAppetiteNode,
+  RiskAppetiteGoalNode,
   FactorAnalysisNode,
+  RiskApptiteRiskNode,
 ];
