@@ -8,7 +8,7 @@ export default class PeriodSetupNode extends NodeWithDefaultLabel {
       icon,
       title: 'Настройка временного интервала',
       name: 'PeriodSetup',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -44,7 +44,7 @@ export default class PeriodSetupNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Настройка периода"`, title: 'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Настройка временного интервала"`, title: 'Тип примитива' }),
       name: createNodeProperty({ expression: `"Настройка периода"`, title: 'Наименование' }),
       start: createNodeProperty({ expression: `"01.2023"`, title: 'Начало периода' }),
       finish: createNodeProperty({ expression: `"01.2024"`, title: 'Конец периода' }),

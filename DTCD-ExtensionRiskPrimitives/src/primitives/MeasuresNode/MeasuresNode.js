@@ -8,7 +8,7 @@ export default class MeasuresNode extends NodeWithDefaultLabel {
       icon,
       title: 'Мероприятия',
       name: 'Measures',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 

@@ -34,6 +34,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - version of sdk
 - node titles
+- type property expession in nodes
+- renamed group of new primitives from 'Рисковые примитивы 2' в 'Рисковые примитивы'
+
+### Removed
+
+- old risk nodes
 
 ## [0.2.0]
 

@@ -8,7 +8,7 @@ export default class CalcNode_3 extends NodeWithDefaultLabel {
       icon,
       title: 'Расчетный3',
       name: 'Calc3',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 

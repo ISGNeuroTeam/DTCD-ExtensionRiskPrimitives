@@ -8,7 +8,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
       icon,
       title: 'Риск (расчетное дерево риски)',
       name: 'Risk',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -47,7 +47,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
 
     const properties = {
       type: createNodeProperty({ 
-        expression: `"Риск"`,
+        expression: `"Риск (расчетное дерево риски)"`,
         title:"Тип примитива"
       }),
       name: createNodeProperty({

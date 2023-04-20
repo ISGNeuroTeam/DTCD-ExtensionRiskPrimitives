@@ -8,7 +8,7 @@ export default class FactorAnalysisNode extends NodeWithDefaultLabel {
       icon,
       title: 'Факторный анализ эффективности управления риском',
       name: 'FactorAnalysis',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -43,7 +43,7 @@ export default class FactorAnalysisNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Факторный анализ"`, title: 'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Факторный анализ эффективности управления риском"`, title: 'Тип примитива' }),
       name: createNodeProperty({title:'Наименование'}),
       description: createNodeProperty({title:'Описание'}),
       value: createNodeProperty({title:'Значение'}),

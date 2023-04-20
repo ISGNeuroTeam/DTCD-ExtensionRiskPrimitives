@@ -9,7 +9,7 @@ export default class DataNode extends NodeWithDefaultLabel {
       icon,
       title: 'Примитив с данными',
       name: 'Data',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -44,7 +44,7 @@ export default class DataNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Данные"`, title:'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Примитив с данными"`, title:'Тип примитива' }),
       name:  createNodeProperty({title:'Наименование'}),
       description: createNodeProperty({title:'Описание'}),
       value: createNodeProperty({title:'Значение'}),

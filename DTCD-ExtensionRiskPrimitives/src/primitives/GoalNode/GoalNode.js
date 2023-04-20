@@ -8,7 +8,7 @@ export default class GoalNode extends NodeWithDefaultLabel {
       icon,
       title: 'Цель',
       name: 'Goal',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -60,7 +60,7 @@ export default class GoalNode extends NodeWithDefaultLabel {
             `"Проект «Стратегия цифровой трансформации»"`,
           ]
         },
-        title: 'Наименование'
+        title: 'Наименование цели'
       }),
       description: createNodeProperty({title:'Описание'}),
       value: createNodeProperty({title:'Значение'}),

@@ -6,9 +6,9 @@ export default class RiskFactorNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Риск фактор (расчетное дерево риски, риски+меры)',
+      title: 'Риск-фактор (расчетное дерево риски, риски+меры)',
       name: 'RiskFactor',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -43,7 +43,7 @@ export default class RiskFactorNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Риск-фактор"`, title: 'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Риск-фактор (расчетное дерево риски, риски+меры)"`, title: 'Тип примитива' }),
       name: createNodeProperty({ title: `Наименование риск-фактора`}),
       description: createNodeProperty({ title: `Описание`}),
       value: createNodeProperty({ title: `Значение`}),
