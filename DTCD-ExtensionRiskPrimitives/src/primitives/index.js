@@ -1,7 +1,7 @@
-import CRLNodes from './RichLabelNodes/CRLNodes';
-import URLNodes from './RichLabelNodes/URLNodes';
-import SRLNodes from './RichLabelNodes/SRLNodes';
-import TRLNodes from './RichLabelNodes/TRLNodes';
+// import CRLNodes from './RichLabelNodes/CRLNodes';
+// import URLNodes from './RichLabelNodes/URLNodes';
+// import SRLNodes from './RichLabelNodes/SRLNodes';
+// import TRLNodes from './RichLabelNodes/TRLNodes';
 import ExportNode from './ExportNode/ExportNode';
 import DataNode from './DataNode/DataNode';
 import CalcNode_2 from './CalcNode/CalcNode_2';
@@ -22,10 +22,10 @@ import FactorAnalysisNode from './FactorAnalysisNode/FactorAnalysisNode';
 import RiskApptiteRiskNode from './RiskAppetiteRiskNode/RiskAppetiteRiskNode';
 
 export default [
-  ...CRLNodes,
-  ...URLNodes,
-  ...SRLNodes,
-  ...TRLNodes,
+  // ...CRLNodes,
+  // ...URLNodes,
+  // ...SRLNodes,
+  // ...TRLNodes,
   DataNode,
   CalcNode_2,
   CalcNode_3,

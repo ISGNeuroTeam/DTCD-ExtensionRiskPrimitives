@@ -8,7 +8,7 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
       icon,
       title: 'Риск-аппетит по цели',
       name: 'RiskAppetiteGoal',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -45,8 +45,25 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({expression: `"Рисковый"`, title:'Тип примитива'}),
-      name: createNodeProperty({ title:'Наименование цели'}),
+      type: createNodeProperty({expression: `"Риск-аппетит по цели"`, title:'Тип примитива'}),
+      name: createNodeProperty({
+        input: {
+          component: 'select',
+          type: 'const',
+          values: [
+            `"Чистая прибыль млн руб."`,
+            `"Грузооборот"`,
+            `"Доходность на общий парк руб./ваг./сут."`,
+            `"EBITDA"`,
+            `"Чистый долг/EBITDA"`,
+            `"ROIC"`,
+            `"Проект «Скоростные перевозки контейнеров»"`,
+            `"Проект «Контрейлерные перевозки»"`,
+            `"Проект «Стратегия цифровой трансформации»"`,
+          ]
+        },
+        title: 'Наименование цели'
+      }),
       description: createNodeProperty({title:'Заявление по риск-аппетиту'}),
       goal_budget_value: createNodeProperty({title:'Бюджетное значение по цели'}),
       goal_fact_value: createNodeProperty({title:'Фактическое значение по цели'}),

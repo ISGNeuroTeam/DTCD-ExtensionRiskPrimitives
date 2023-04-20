@@ -1,13 +1,14 @@
 import icon from './icon.svg';
 import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
 
 export default class RiskMeasNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Риск (расчетное дерево + меры)',
+      title: 'Риск с учётом мероприятий (расчетное дерево + меры)',
       name: 'RiskMeas',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -44,10 +45,8 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: { expression: `"Рисковый"`, type: 'expression' },
-      name: {
-        expression: ``,
-        type: 'expression',
+      type: createNodeProperty({ expression: `"Риск с учётом мероприятий (расчетное дерево + меры)"`, title:'Тип примитива'}),
+      name: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -96,11 +95,10 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Риск снижения индекса исполнительской дисциплины"`,
             `"Риск несоотвествия рабочего парка потребному в связи с отсутствием деталей для ремонта ПС"`,
           ]
-        }
-      },
-      identifier: {
-        expression: ``,
-        type: 'expression',
+        },
+        title: 'Наименование риска'
+      }),
+      identifier: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -152,12 +150,11 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Р.045"`,
             `"Р.046"`,
           ]
-        }
-      },
-      description: { expression: ``, type: 'expression' },
-      residual_risk_probability: {
-        expression: ``,
-        type: 'expression',
+        },
+        title: 'Идентификатор риска'
+      }),
+      description: createNodeProperty({ title: "Описание"}),
+      residual_risk_probability: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -168,13 +165,12 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"51-75%"`,
             `">75%"`,
           ],
-        }
-      },
-      residual_risk_impact: { expression: ``, type: 'expression' },
-      residual_risk_value: { expression: ``, type: 'expression' },
-      management_strategy: {
-        expression: ``,
-        type: 'expression',
+        },
+        title: "Остаточный риск - Вероятность"
+      }),
+      residual_risk_impact: createNodeProperty({ title: `Остаточный риск - Влияние` }),
+      residual_risk_value: createNodeProperty({ title: `Остаточный риск - Итоговая оценка` }),
+      management_strategy: createNodeProperty({
         input: {
           component: 'select',
           type: 'const',
@@ -185,10 +181,11 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Передача риска"`,
             `"Добор риска"`,
           ]
-        }
-      },
-      measures: { expression: ``, type: 'expression' },
-      management_resources: { expression: ``, type: 'expression' },
+        },
+        title: "Стратегия управления риском'"
+      }),
+      measures:createNodeProperty({ title: `Мероприятия` }),
+      management_resources: createNodeProperty({ title: `Используемые ресурсы` }),
     };
 
     const initPorts = [
@@ -197,7 +194,7 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: { expression: ``, type: 'expression' },
+          status: createNodeProperty({}),
         },
       }
     ];

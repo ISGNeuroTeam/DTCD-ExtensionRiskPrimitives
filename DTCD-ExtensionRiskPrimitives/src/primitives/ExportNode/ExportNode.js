@@ -7,7 +7,7 @@ export default class ExportNode extends NodeWithDefaultLabel {
       icon,
       title: 'Экспорт данных',
       name: 'ExportNode',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 

@@ -8,7 +8,7 @@ export default class AlertNode extends NodeWithDefaultLabel {
       icon,
       title: 'Оповещение',
       name: 'Alert',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 

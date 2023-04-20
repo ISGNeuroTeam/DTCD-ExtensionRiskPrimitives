@@ -6,9 +6,9 @@ export default class KIRNode_2 extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'Ключевой индикатор риска',
+      title: 'Ключевой индикатор риска2',
       name: 'KIR2',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -45,13 +45,13 @@ export default class KIRNode_2 extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"КИР"`, title: 'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Ключевой индикатор риска"`, title: 'Тип примитива' }),
       name: createNodeProperty({ title: 'Наименование КИР' }),
       description: createNodeProperty({ title: 'Описание' }),
       budget_value: createNodeProperty({ title: 'Бюджетное значение' }),
       fact_value: createNodeProperty({ title: 'Фактическое значение' }),
       critical_coef: createNodeProperty({ title: 'Коэффициент для критического значения' }),
-      boundary_coef: createNodeProperty({ title: 'ККоэффициент для пограничного значения' }),
+      boundary_coef: createNodeProperty({ title: 'Коэффициент для пограничного значения' }),
       critical_value: createNodeProperty({ title: 'Критическое значение' }),
       boundary_value: createNodeProperty({ title: 'Пограничное значение' }),
       plan_value: createNodeProperty({ title: 'Плановое значение' }),

@@ -8,7 +8,7 @@ export default class UncontrolledRiskNode extends NodeWithDefaultLabel {
       icon,
       title: 'Неподконтрольный риск-фактор (главное дерево)',
       name: 'UncontrolledRisk',
-      groups: ['Рисковые примитивы 2'],
+      groups: ['Рисковые примитивы'],
     };
   }
 
@@ -43,7 +43,7 @@ export default class UncontrolledRiskNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Рисковый"`, title: 'Тип примитива' }),
+      type: createNodeProperty({ expression: `"Неподконтрольный риск-фактор (главное дерево)"`, title: 'Тип примитива' }),
       name: createNodeProperty({title: 'Наименование риск-фактора' }),
       description: createNodeProperty({ title: 'Описание' }),
       value: createNodeProperty({ title: 'Значение' }),
