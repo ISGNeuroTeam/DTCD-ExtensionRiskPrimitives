@@ -47,6 +47,8 @@ export default class RiskFactorNode extends NodeWithDefaultLabel {
       name: createNodeProperty({ title: `Наименование риск-фактора`}),
       description: createNodeProperty({ title: `Описание`}),
       value: createNodeProperty({ title: `Значение`}),
+      value_to_goal: createNodeProperty({ title: `Влияние риск-фактора на цель`}),
+      indentifier: createNodeProperty({ title: `Идентификатор`}),
       expected_effect: createNodeProperty({ title: `Ожидаемый эффект`}),
     };
 
