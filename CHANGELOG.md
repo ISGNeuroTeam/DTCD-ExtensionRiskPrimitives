@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - NodeWithDefaultLabel class
 - field 'title' with tooltip text in RiskNode primitive properties
 - new RiskAppetiteGoal and RiskAppetiteRisk primitives instead of RiskAppetite
+- added new properties to RiskFactorNode and MeasuresNode
 
 ### Changed
 
