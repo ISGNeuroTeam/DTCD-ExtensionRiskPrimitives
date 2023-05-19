@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [UNRELEASED]
+## [0.3.0]
 
 ### Added
 
@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new AlertNode primitive
 - new PeriodSetupNode primitive
 - new FactorAnalysisNode primitive
-- new RiskRAppetiteNode primitive
+- new RiskAppetiteNode primitive
 - default label for nodes
 - AbstractNode class
 - NodeWithDefaultLabel class
@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - version of sdk
 - node titles
 - type property expession in nodes
-- renamed group of new primitives from 'Рисковые примитивы 2' в 'Рисковые примитивы'
+- renamed group of new primitives from 'Рисковые примитивы 2' to 'Рисковые примитивы'
 
 ### Removed
 
