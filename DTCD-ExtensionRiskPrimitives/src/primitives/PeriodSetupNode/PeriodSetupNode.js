@@ -48,6 +48,7 @@ export default class PeriodSetupNode extends NodeWithDefaultLabel {
       name: createNodeProperty({ expression: `"Настройка периода"`, title: 'Наименование' }),
       start: createNodeProperty({ expression: `"01.2023"`, title: 'Начало периода' }),
       finish: createNodeProperty({ expression: `"01.2024"`, title: 'Конец периода' }),
+      prognoz_state: createNodeProperty({ title: 'Период факта для прогноза' }),
     };
 
     const initPorts = [];
