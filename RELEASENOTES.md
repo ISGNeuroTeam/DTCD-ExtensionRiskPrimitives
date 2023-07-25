@@ -1,3 +1,14 @@
+## [0.4.0]
+
+### Added
+
+- New props `condition_<N>` to AlertNode
+- New prop `prognoz_state` to PeriodSetupNode
+
+### Changed
+
+- Prop `condition` to `root_condition` in AlertNode
+
 ## [0.3.0]
 
 ### Added
