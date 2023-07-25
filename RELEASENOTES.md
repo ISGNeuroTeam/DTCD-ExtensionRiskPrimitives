@@ -1,3 +1,9 @@
+## [0.4.1]
+
+### Changed
+
+- The `indentifier` prop in MeasuresNode and RiskFactorNode renamed to `identifier`
+
 ## [0.4.0]
 
 ### Added

@@ -78,7 +78,7 @@ export default class MeasuresNode extends NodeWithDefaultLabel {
       status: createNodeProperty({ title: 'Текущий статус' }),
       efficiency: createNodeProperty({ title: 'Итоговая эффективность мероприятия' }),
       value_to_goal: createNodeProperty({ title: `Влияние риск-фактора на цель`}),
-      indentifier: createNodeProperty({ title: `Идентификатор`}),
+      identifier: createNodeProperty({ title: `Идентификатор`}),
       comment: createNodeProperty({ title: 'Комментарии' }),
     };
 
