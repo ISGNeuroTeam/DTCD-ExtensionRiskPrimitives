@@ -70,6 +70,17 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
       goal_prognoz_value: createNodeProperty({title:'Прогнозное значение по цели'}),
       risk_appetite_exceeded: createNodeProperty({title:'Факт соблюдения риск-аппетита'}),
       risk_appetite_value: createNodeProperty({title:'Значение риск-аппетита'}),
+      aggregate_operations: createNodeProperty({
+        title: 'Операция по агрегации',
+        input: {
+          component: 'select',
+          type: 'const',
+          values: [
+            `"avg"`,
+            `"sum"`,
+          ],
+        },
+      }),
     };
 
     const initPorts = [

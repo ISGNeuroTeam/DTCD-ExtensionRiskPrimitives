@@ -157,6 +157,20 @@ export default class RiskAppetiteRiskNode extends NodeWithDefaultLabel {
       risk_appetite_impact: createNodeProperty({title:'Допустимое влияние риска'}),
       risk_appetite_probability: createNodeProperty({title:'Допустимая вероятность риска'}),
       risk_appetite_value: createNodeProperty({title:'Допустимый уровень риска'}),
+      risk_appetite_exceeded: createNodeProperty({title: 'Соблюдение допустимого уровня'}),
+      risk_fact_value: createNodeProperty({title: 'Фактическое влияние риска'}),
+      parent_primitive_id: createNodeProperty({title: 'Родительский примитив'}),
+      aggregate_operations: createNodeProperty({
+        title: 'Операция по агрегации',
+        input: {
+          component: 'select',
+          type: 'const',
+          values: [
+            `"avg"`,
+            `"sum"`,
+          ],
+        },
+      }),
     };
 
     const initPorts = [

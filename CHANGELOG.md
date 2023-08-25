@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [UNRELEASED]
+
+### Added
+
+- new prop `aggregate_operations` to RiskAppetiteGoalNode
+- new prop `risk_appetite_exceeded` to to RiskAppetiteRiskNode
+- new prop `risk_fact_value` to RiskAppetiteRiskNode
+- new prop `parent_primitive_id` to RiskAppetiteRiskNode
+- new prop `aggregate_operations` to RiskAppetiteRiskNode
+
 ## [0.4.1]
 
 ### Changed
