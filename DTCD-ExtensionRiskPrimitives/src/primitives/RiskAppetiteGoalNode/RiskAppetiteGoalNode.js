@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,10 +13,10 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
-    this.instance.tag.defaultLabel = `$this.props.name$`
-    this.instance.tag.defaulInitialtLabel = ``
+    super(yFiles);
+    this.yfiles = yFiles;
+    this.instance.tag.defaultLabel = `$this.props.name$`;
+    this.instance.tag.defaulInitialtLabel = ``;
   }
 
   create() {
@@ -28,7 +28,6 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -45,7 +44,7 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({expression: `"Риск-аппетит по цели"`, title:'Тип примитива'}),
+      type: createNodeProperty({expression: `"Риск-аппетит по цели"`, title: 'Тип примитива' }),
       name: createNodeProperty({
         input: {
           component: 'select',
@@ -60,41 +59,38 @@ export default class RiskAppetiteGoalNode extends NodeWithDefaultLabel {
             `"Проект «Скоростные перевозки контейнеров»"`,
             `"Проект «Контрейлерные перевозки»"`,
             `"Проект «Стратегия цифровой трансформации»"`,
-          ]
+          ],
         },
-        title: 'Наименование цели'
+        title: 'Наименование цели',
       }),
-      description: createNodeProperty({title:'Заявление по риск-аппетиту'}),
-      goal_budget_value: createNodeProperty({title:'Бюджетное значение по цели'}),
-      goal_fact_value: createNodeProperty({title:'Фактическое значение по цели'}),
-      goal_prognoz_value: createNodeProperty({title:'Прогнозное значение по цели'}),
-      risk_appetite_exceeded: createNodeProperty({title:'Факт соблюдения риск-аппетита'}),
-      risk_appetite_value: createNodeProperty({title:'Значение риск-аппетита'}),
+      description: createNodeProperty({ title: 'Заявление по риск-аппетиту' }),
+      goal_budget_value: createNodeProperty({ title: 'Бюджетное значение по цели' }),
+      goal_fact_value: createNodeProperty({ title: 'Фактическое значение по цели' }),
+      goal_prognoz_value: createNodeProperty({ title: 'Прогнозное значение по цели' }),
+      risk_appetite_exceeded: createNodeProperty({ title: 'Факт соблюдения риск-аппетита' }),
+      risk_appetite_value: createNodeProperty({ title: 'Значение риск-аппетита' }),
       aggregate_operations: createNodeProperty({
         title: 'Операция по агрегации',
         input: {
           component: 'select',
           type: 'const',
-          values: [
-            `"avg"`,
-            `"sum"`,
-          ],
+          values: [`"avg"`, `"sum"`],
         },
       }),
     };
 
     const initPorts = [
       {
-        primitiveName: `inPort1`,
+        primitiveName: 'inPort1',
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
           status: createNodeProperty({}),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

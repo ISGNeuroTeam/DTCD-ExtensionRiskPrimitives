@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class MeasuresNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,8 +13,8 @@ export default class MeasuresNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
+    super(yFiles);
+    this.yfiles = yFiles;
   }
 
   create() {
@@ -26,7 +26,6 @@ export default class MeasuresNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -71,29 +70,29 @@ export default class MeasuresNode extends NodeWithDefaultLabel {
             `"ДПИ: С.А. Калашников"`,
           ],
         },
-        title:'Владелец риска'
+        title: 'Владелец риска',
       }),
       cost: createNodeProperty({ title: 'Затраты на реализацию' }),
       planned_at: createNodeProperty({ title: 'Плановая дата мероприятия' }),
       status: createNodeProperty({ title: 'Текущий статус' }),
       efficiency: createNodeProperty({ title: 'Итоговая эффективность мероприятия' }),
-      value_to_goal: createNodeProperty({ title: `Влияние риск-фактора на цель`}),
-      identifier: createNodeProperty({ title: `Идентификатор`}),
+      value_to_goal: createNodeProperty({ title: 'Влияние риск-фактора на цель' }),
+      identifier: createNodeProperty({ title: 'Идентификатор' }),
       comment: createNodeProperty({ title: 'Комментарии' }),
     };
 
     const initPorts = [
       {
-        primitiveName: `outPort1`,
+        primitiveName: 'outPort1',
         type: 'OUT',
         portPosition: { x: 1, y: 0.5 },
         properties: {
-          status: createNodeProperty({ expression: `value`}),
+          status: createNodeProperty({ expression: 'value' }),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

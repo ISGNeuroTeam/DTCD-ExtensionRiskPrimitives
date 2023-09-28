@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new prop `parent_primitive_id` to RiskAppetiteRiskNode
 - new prop `aggregate_operations` to RiskAppetiteRiskNode
 
+### Changed
+
+- SDK version to 0.12.0
+- some code improvements
+
 ## [0.4.1]
 
 ### Changed

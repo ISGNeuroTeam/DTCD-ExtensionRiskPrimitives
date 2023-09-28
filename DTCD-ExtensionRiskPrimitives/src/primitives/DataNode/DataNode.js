@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel'
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class DataNode extends NodeWithDefaultLabel {
 
@@ -14,8 +14,8 @@ export default class DataNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
+    super(yFiles);
+    this.yfiles = yFiles;
   }
 
   create() {
@@ -27,7 +27,6 @@ export default class DataNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -44,23 +43,24 @@ export default class DataNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Примитив с данными"`, title:'Тип примитива' }),
-      name:  createNodeProperty({title:'Наименование'}),
-      description: createNodeProperty({title:'Описание'}),
-      value: createNodeProperty({title:'Значение'}),
+      type: createNodeProperty({ expression: `"Примитив с данными"`, title: 'Тип примитива' }),
+      name:  createNodeProperty({ title: 'Наименование' }),
+      description: createNodeProperty({ title: 'Описание' }),
+      value: createNodeProperty({ title: 'Значение' }),
     };
 
     const initPorts = [
       {
-        primitiveName: `outPort1`,
+        primitiveName: 'outPort1',
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createNodeProperty({ expression:'value' }),
+          status: createNodeProperty({ expression: 'value' }),
         },
-      }
+      },
     ];
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

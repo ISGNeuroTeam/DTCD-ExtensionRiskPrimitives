@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class RiskNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,11 +13,10 @@ export default class RiskNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
-
-    this.instance.tag.defaultLabel = `$this.props.name$`
-    this.instance.tag.defaulInitialtLabel = ``
+    super(yFiles);
+    this.yfiles = yFiles;
+    this.instance.tag.defaultLabel = `$this.props.name$`;
+    this.instance.tag.defaulInitialtLabel = ``;
   }
 
   create() {
@@ -29,7 +28,6 @@ export default class RiskNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -46,10 +44,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ 
-        expression: `"Риск (расчетное дерево риски)"`,
-        title:"Тип примитива"
-      }),
+      type: createNodeProperty({ expression: `"Риск (расчетное дерево риски)"`, title:'Тип примитива' }),
       name: createNodeProperty({
         input: {
           component: 'select',
@@ -98,9 +93,9 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Риски неосвоения или перерасхода инвестиционной программы в части закупки подвижного состава"`,
             `"Риск снижения индекса исполнительской дисциплины"`,
             `"Риск несоотвествия рабочего парка потребному в связи с отсутствием деталей для ремонта ПС"`,
-          ]
+          ],
         },
-        title:'Наименование риска'
+        title: 'Наименование риска',
       }),
       identifier: createNodeProperty({
         input: {
@@ -153,13 +148,11 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Р.044"`,
             `"Р.045"`,
             `"Р.046"`,
-          ]
+          ],
         },
-        title:'Идентификатор риска'
+        title: 'Идентификатор риска',
       }),
-      description: createNodeProperty({
-        title:'Описание'
-      }),
+      description: createNodeProperty({ title: 'Описание' }),
       goal: createNodeProperty({
         input: {
           component: 'select',
@@ -174,9 +167,9 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Проект «Скоростные перевозки контейнеров»"`,
             `"Проект «Контрейлерные перевозки»"`,
             `"Проект «Стратегия цифровой трансформации»"`,
-          ]
+          ],
         },
-        title:'Цель'
+        title: 'Цель',
       }),
       business_process: createNodeProperty({
         input: {
@@ -204,9 +197,9 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"управление финансами"`,
             `"обеспечение охраны труда, промышленной, пожарной и экологической безопасности"`,
             `"обеспечение безопасности движения"`,
-          ]
+          ],
         },
-        title:'Бизнес-процесс'
+        title: 'Бизнес-процесс',
       }),
       risk_type: createNodeProperty({
         input: {
@@ -217,9 +210,9 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"операционные риски"`,
             `"комплаенс-риски (соблюдение нормативно-правовых актов внутренних нормативных документов Общества)"`,
             `"риски достоверности отчетности"`,
-          ]
+          ],
         },
-        title:'Тип риска'
+        title: 'Тип риска',
       }),
       business_direction: createNodeProperty({
         input: {
@@ -250,9 +243,9 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Стратегическое планирование и целеполагание"`,
             `"Делопроизводство и ведение архива"`,
             `"Корпоративное управление"`,
-          ]
+          ],
         },
-        title:'Направление деятельности'
+        title: 'Направление деятельности',
       }),
       is_key_risk: createNodeProperty({
         title: 'Ключевой / не ключевой',
@@ -279,12 +272,8 @@ export default class RiskNode extends NodeWithDefaultLabel {
           component: 'switch',
         },
       }),
-      risk_factor: createNodeProperty({
-        title: 'Риск-факторы',
-      }),
-      consequences: createNodeProperty({
-        title: 'Последствия реализации риска',
-      }),
+      risk_factor: createNodeProperty({ title: 'Риск-факторы' }),
+      consequences: createNodeProperty({ title: 'Последствия реализации риска' }),
       related_risk: createNodeProperty({
         title: 'Связанные риски',
         input: {
@@ -317,18 +306,15 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"ДСКУ: Р.Г. Абдуллаева"`,
             `"ДПИ: С.А. Калашников"`,
           ],
-        }
+        },
       }),
       is_quantified: createNodeProperty({
         title: 'Возможность количественной оценки',
         input: {
           component: 'select',
           type: 'const',
-          values: [
-            `"Количественный"`,
-            `"Качественный"`,
-          ],
-        }
+          values: [`"Количественный"`, `"Качественный"`],
+        },
       }),
       current_risk_probability: createNodeProperty({
         title: 'Текущий риск — Вероятность',
@@ -342,17 +328,11 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"51-75%"`,
             `">75%"`,
           ],
-        }
+        },
       }),
-      current_risk_impact: createNodeProperty({
-        title: 'Текущий риск — Влияние',
-      }),
-      current_risk_value: createNodeProperty({
-        title: 'Текущий риск — Итоговая оценка',
-      }),
-      approach: createNodeProperty({
-        title: 'Подход к оценке',
-      }),
+      current_risk_impact: createNodeProperty({ title: 'Текущий риск — Влияние' }),
+      current_risk_value: createNodeProperty({ title: 'Текущий риск — Итоговая оценка' }),
+      approach: createNodeProperty({ title: 'Подход к оценке' }),
       coordinator: createNodeProperty({
         title: 'Риск-координатор',
         input: {
@@ -396,7 +376,7 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Т.Н. Алёшина"`,
             `"М.В.Бубнов А.В. Банников"`,
           ],
-        }
+        },
       }),
       director: createNodeProperty({
         title: 'Курирующий ЗГД',
@@ -411,23 +391,23 @@ export default class RiskNode extends NodeWithDefaultLabel {
             `"Главный бухгалтер — Евдокимова Татьяна Анатольевна"`,
             `"Заместитель генерального директора по техническому развитию - главный инженер — Шевцов Андрей Мухамедович"`,
             `"Заместитель генерального директора по экономике и финансам — Калмыков Константин Сергеевич"`,
-          ]
-        }
-      })
+          ],
+        },
+      }),
     };
 
     const initPorts = [
       {
-        primitiveName: `inPort1`,
+        primitiveName: 'inPort1',
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
           status: createNodeProperty({}),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

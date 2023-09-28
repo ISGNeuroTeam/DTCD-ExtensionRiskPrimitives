@@ -1,6 +1,6 @@
 export default class ObjectModelPrimitive {
   constructor(yFiles, strokeColor, inPortsCount, outPortsCount) {
-    this.yfiles = yFiles.default;
+    this.yfiles = yFiles;
     this.strokeColor = strokeColor;
     this.inPortsCount = inPortsCount;
     this.outPortsCount = outPortsCount;

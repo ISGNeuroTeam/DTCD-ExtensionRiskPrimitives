@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class ExportNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -12,10 +12,10 @@ export default class ExportNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
-    this.instance.tag.defaultLabel = ``
-    this.instance.tag.defaulInitialtLabel = ``
+    super(yFiles);
+    this.yfiles = yFiles;
+    this.instance.tag.defaultLabel = ``;
+    this.instance.tag.defaulInitialtLabel = ``;
   }
 
   create() {
@@ -27,7 +27,6 @@ export default class ExportNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -43,7 +42,7 @@ export default class ExportNode extends NodeWithDefaultLabel {
       insets: [20, 20],
     });
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties: {}, initPorts: [] };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties: {}, initPorts: [] };
 
     return this.instance;
   }

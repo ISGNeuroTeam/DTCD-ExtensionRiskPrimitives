@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class RiskMeasNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,10 +13,10 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
-    this.instance.tag.defaultLabel = `$this.props.name$`
-    this.instance.tag.defaulInitialtLabel = ``
+    super(yFiles);
+    this.yfiles = yFiles;
+    this.instance.tag.defaultLabel = `$this.props.name$`;
+    this.instance.tag.defaulInitialtLabel = ``;
   }
 
   create() {
@@ -28,7 +28,6 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -45,7 +44,7 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
     });
 
     const properties = {
-      type: createNodeProperty({ expression: `"Риск с учётом мероприятий (расчетное дерево + меры)"`, title:'Тип примитива'}),
+      type: createNodeProperty({ expression: `"Риск с учётом мероприятий (расчетное дерево + меры)"`, title: 'Тип примитива' }),
       name: createNodeProperty({
         input: {
           component: 'select',
@@ -94,9 +93,9 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Риски неосвоения или перерасхода инвестиционной программы в части закупки подвижного состава"`,
             `"Риск снижения индекса исполнительской дисциплины"`,
             `"Риск несоотвествия рабочего парка потребному в связи с отсутствием деталей для ремонта ПС"`,
-          ]
+          ],
         },
-        title: 'Наименование риска'
+        title: 'Наименование риска',
       }),
       identifier: createNodeProperty({
         input: {
@@ -149,11 +148,11 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Р.044"`,
             `"Р.045"`,
             `"Р.046"`,
-          ]
+          ],
         },
-        title: 'Идентификатор риска'
+        title: 'Идентификатор риска',
       }),
-      description: createNodeProperty({ title: "Описание"}),
+      description: createNodeProperty({ title: 'Описание' }),
       residual_risk_probability: createNodeProperty({
         input: {
           component: 'select',
@@ -166,10 +165,10 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `">75%"`,
           ],
         },
-        title: "Остаточный риск - Вероятность"
+        title: 'Остаточный риск - Вероятность',
       }),
-      residual_risk_impact: createNodeProperty({ title: `Остаточный риск - Влияние` }),
-      residual_risk_value: createNodeProperty({ title: `Остаточный риск - Итоговая оценка` }),
+      residual_risk_impact: createNodeProperty({ title: 'Остаточный риск - Влияние' }),
+      residual_risk_value: createNodeProperty({ title: 'Остаточный риск - Итоговая оценка' }),
       management_strategy: createNodeProperty({
         input: {
           component: 'select',
@@ -180,26 +179,26 @@ export default class RiskMeasNode extends NodeWithDefaultLabel {
             `"Принятие риска"`,
             `"Передача риска"`,
             `"Добор риска"`,
-          ]
+          ],
         },
-        title: "Стратегия управления риском'"
+        title: 'Стратегия управления риском',
       }),
-      measures:createNodeProperty({ title: `Мероприятия` }),
-      management_resources: createNodeProperty({ title: `Используемые ресурсы` }),
+      measures: createNodeProperty({ title: 'Мероприятия' }),
+      management_resources: createNodeProperty({ title: 'Используемые ресурсы' }),
     };
 
     const initPorts = [
       {
-        primitiveName: `inPort1`,
+        primitiveName: 'inPort1',
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
           status: createNodeProperty({}),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

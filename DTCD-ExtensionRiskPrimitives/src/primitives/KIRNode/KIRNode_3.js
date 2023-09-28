@@ -1,6 +1,6 @@
 import icon from './icon_3.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class KIRNode_3 extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,10 +13,10 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
-    this.instance.tag.defaultLabel = `$this.props.name$`
-    this.instance.tag.defaulInitialtLabel = ``
+    super(yFiles);
+    this.yfiles = yFiles;
+    this.instance.tag.defaultLabel = `$this.props.name$`;
+    this.instance.tag.defaulInitialtLabel = ``;
   }
 
   create() {
@@ -28,7 +28,6 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -59,7 +58,7 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
 
     const initPorts = [
       {
-        primitiveName: `inPort1`,
+        primitiveName: 'inPort1',
         type: 'IN',
         portPosition: { x: 0.2, y: 1 },
         properties: {
@@ -67,7 +66,7 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
         },
       },
       {
-        primitiveName: `inPort2`,
+        primitiveName: 'inPort2',
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
@@ -75,7 +74,7 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
         },
       },
       {
-        primitiveName: `inPort3`,
+        primitiveName: 'inPort3',
         type: 'IN',
         portPosition: { x: 0.8, y: 1 },
         properties: {
@@ -83,16 +82,16 @@ export default class KIRNode_3 extends NodeWithDefaultLabel {
         },
       },
       {
-        primitiveName: `outPort1`,
+        primitiveName: 'outPort1',
         type: 'OUT',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createNodeProperty({ expression: `value` }),
+          status: createNodeProperty({ expression: 'value' }),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }

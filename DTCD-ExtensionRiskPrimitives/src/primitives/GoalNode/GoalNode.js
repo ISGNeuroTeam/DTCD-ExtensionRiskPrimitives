@@ -1,6 +1,6 @@
 import icon from './icon.svg';
-import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty'
-import NodeWithDefaultLabel from '../../Abstractions/NodeWithDefaultLabel';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
+import { NodeWithDefaultLabel } from '../../../../DTCD-SDK';
 
 export default class GoalNode extends NodeWithDefaultLabel {
   static getPrimitiveInfo() {
@@ -13,8 +13,8 @@ export default class GoalNode extends NodeWithDefaultLabel {
   }
 
   constructor(yFiles) {
-    super(yFiles)
-    this.yfiles = yFiles.default;
+    super(yFiles);
+    this.yfiles = yFiles;
   }
 
   create() {
@@ -26,7 +26,6 @@ export default class GoalNode extends NodeWithDefaultLabel {
       HorizontalTextAlignment,
       TextWrapping,
     } = this.yfiles;
-
 
     this.instance.layout = new Rect(0, 0, 294, 148);
     this.instance.style = new ShapeNodeStyle({
@@ -58,26 +57,26 @@ export default class GoalNode extends NodeWithDefaultLabel {
             `"Проект «Скоростные перевозки контейнеров»"`,
             `"Проект «Контрейлерные перевозки»"`,
             `"Проект «Стратегия цифровой трансформации»"`,
-          ]
+          ],
         },
-        title: 'Наименование цели'
+        title: 'Наименование цели',
       }),
-      description: createNodeProperty({title:'Описание'}),
-      value: createNodeProperty({title:'Значение'}),
+      description: createNodeProperty({ title: 'Описание' }),
+      value: createNodeProperty({ title: 'Значение' }),
     };
 
     const initPorts = [
       {
-        primitiveName: `inPort1`,
+        primitiveName: 'inPort1',
         type: 'IN',
         portPosition: { x: 0.5, y: 1 },
         properties: {
           status: createNodeProperty({}),
         },
-      }
+      },
     ];
 
-    this.instance.tag = {...this.instance.tag, customLabelStyle, properties, initPorts };
+    this.instance.tag = { ...this.instance.tag, customLabelStyle, properties, initPorts };
 
     return this.instance;
   }
